@@ -57,16 +57,15 @@ VALUES
 
 INSERT INTO appeals (appealDate, ticketId, appealInfo)
 VALUES
-    ('20241001', 1, 'Appeal regarding ticket ID 1, challenging the fine amount.'),
+    ('20250224', 1, 'Appeal regarding ticket ID 1, challenging the fine amount.'),
     ('20241002', 2, 'Appeal for ticket ID 2, requesting a reduction in penalty.'),
-    ('20241003', 3, 'Appeal related to ticket ID 3, questioning the details of the report.'),
-    ('20241004', 4, 'Appeal concerning ticket ID 4, disputing the charges.'),
-    ('20241005', 5, 'Appeal for ticket ID 5, arguing the validity of the ticket.'),
-    ('20241006', 16, 'Appeal for ticket ID 16, requesting the cancellation of the fine.'),
-    ('20241007', 14, 'Appeal regarding ticket ID 14, asking for a review of the decision.'),
-    ('20241008', 8, 'Appeal related to ticket ID 8, disputing the amount of the fine.'),
+    ('20250202', 3, 'Appeal related to ticket ID 3, questioning the details of the report.'),
+    ('20240821', 4, 'Appeal concerning ticket ID 4, disputing the charges.'),
+    ('20240710', 5, 'Appeal for ticket ID 5, arguing the validity of the ticket.'),
+    ('20250211', 16, 'Appeal for ticket ID 16, requesting the cancellation of the fine.'),
+    ('20241107', 14, 'Appeal regarding ticket ID 14, asking for a review of the decision.'),
+    ('20241205', 8, 'Appeal related to ticket ID 8, disputing the amount of the fine.'),
     ('20241009', 10, 'Appeal concerning ticket ID 10, questioning the validity of the citation.'),
-    ('20241010', 11, 'Appeal for ticket ID 11, requesting a reconsideration of the fine.'),
-    ('20241011', 7, 'Appeal regarding ticket ID 7, challenging the legality of the ticket issued.'),
-    ('20241012', 12, 'Appeal related to ticket ID 12, requesting a decrease in the fine amount.');
-
+    ('20250127', 11, 'Appeal for ticket ID 11, requesting a reconsideration of the fine.'),
+    ('20240503', 7, 'Appeal regarding ticket ID 7, challenging the legality of the ticket issued.'),
+    ('20240612', 12, 'Appeal related to ticket ID 12, requesting a decrease in the fine amount.');
