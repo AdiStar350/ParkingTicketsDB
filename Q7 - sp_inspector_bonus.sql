@@ -2,26 +2,21 @@
 CREATE PROCEDURE sp_inspector_bonus
 AS
 BEGIN
-    SELECT ins.firstName + ' ' + ins.lastName AS [full name]
-    FROM dbo.inspectors ins
-    WHERE
-        ins.firstName + ' ' + ins.lastName = (
-            SELECT TOP(1)
-                i.firstName + ' ' + i.lastName
-            FROM dbo.tickets t
-            JOIN dbo.inspectors i
-            ON i.id = t.inspectorId
-            GROUP BY i.firstName + ' ' + i.lastName
-            ORDER BY SUM(t.sum) DESC
-        ) OR ins.firstName + ' ' + ins.lastName = (
-            SELECT TOP(1)
-                i.firstName + ' ' + i.lastName
-            FROM dbo.tickets t
-            JOIN dbo.inspectors i
-            ON i.id = t.inspectorId
-            GROUP BY i.firstName + ' ' + i.lastName
-            ORDER BY COUNT(t.id) DESC
-        )
-END;
+    DECLARE @maxSumInspectorId INT = (
+        SELECT TOP(1) t.inspectorId
+        FROM dbo.tickets t
+        GROUP BY t.inspectorId
+        ORDER BY SUM(t.sum) DESC
+    )
 
-EXECUTE dbo.sp_inspector_bonus;
+    DECLARE @maxCountInspectorId INT = (
+        SELECT TOP(1) t.inspectorId
+        FROM dbo.tickets t
+        GROUP BY t.inspectorId
+        ORDER BY COUNT(t.id) DESC
+    )
+
+    SELECT ins.firstName + ' ' + ins.lastName AS [full name]
+    FROM dbo.inspectors i
+    WHERE i.id IN (@maxCountInspectorId, @maxSumInspectorId);
+END;

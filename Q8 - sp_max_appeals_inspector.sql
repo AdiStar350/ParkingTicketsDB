@@ -11,7 +11,5 @@ BEGIN
     JOIN dbo.inspectors i
     ON t.inspectorId = i.id
     GROUP BY i.firstName, i.lastName
-    ORDER BY COUNT(a.id) DESC
+    ORDER BY COUNT(a.id) DESC;
 END;
-
-EXECUTE dbo.sp_max_appeals_inspector;

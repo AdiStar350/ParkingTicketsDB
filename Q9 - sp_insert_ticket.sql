@@ -30,6 +30,3 @@ BEGIN
         ROLLBACK TRANSACTION;
     END CATCH
 END;
-
-EXECUTE dbo.sp_insert_ticket @inspectorId = 2, @sum = 1200;
-
