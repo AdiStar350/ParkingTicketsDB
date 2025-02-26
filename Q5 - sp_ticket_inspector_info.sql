@@ -12,8 +12,5 @@ BEGIN
     FROM dbo.inspectors i
     JOIN dbo.tickets t
     ON t.inspectorId = i.id
-    ORDER BY i.firstName, i.lastName, t.ticketDate
+    ORDER BY i.firstName, i.lastName, t.ticketDate;
 END;
-
-
-EXECUTE dbo.sp_ticket_inspector_info;

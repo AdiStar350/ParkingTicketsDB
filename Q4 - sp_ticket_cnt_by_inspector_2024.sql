@@ -11,6 +11,3 @@ BEGIN
     WHERE DATEPART(YEAR, t.ticketDate) = '2024'
     GROUP BY i.firstName + ' ' + i.lastName
 END;
-
-
-EXECUTE dbo.sp_ticket_cnt_by_inspector_2024;
